@@ -8,6 +8,7 @@ const got = require('got')
 const nodeFetch = require('node-fetch')
 const isomorphicFetch = require('isomorphic-fetch')
 const superagent = require('superagent')
+const centra = require('@helperdiscord/centra')
 const ky = require('ky-universal')
 const request = require('request')
 const { Agent } = require('http')
@@ -125,6 +126,22 @@ const addTestCases = (suite, options) => {
     }
   })
 
+  suite.add('@helperdiscord/centra', {
+    defer: true,
+    fn: defer => {
+      return centra(options.uri).send()
+        .then(response => {
+          if (response.text() === fixtures[options.size]) {
+            return defer.resolve()
+          }
+          throw badDataError
+        })
+        .catch(err => {
+          throw err
+        })
+    }
+  })
+
   suite.add('superagent', {
     defer: true,
     fn: defer => {
@@ -195,7 +212,7 @@ const addTestCases = (suite, options) => {
   suite.add('request', {
     defer: true,
     fn: defer => {
-      return request(options.uri,function(error, response, body) {
+      return request(options.uri, function (error, response, body) {
         if (error) {
           throw error
         }
