@@ -18,10 +18,10 @@ const badDataError = new Error('ERROR: incorrect data')
 const fixtures = {
   16: fs.readFileSync(path.join(__dirname, 'fixtures/16K.txt')).toString(),
   32: fs.readFileSync(path.join(__dirname, 'fixtures/32K.txt')).toString(),
-  64: fs.readFileSync(path.join(__dirname, 'fixtures/64K.txt')).toString(),
+  /*64: fs.readFileSync(path.join(__dirname, 'fixtures/64K.txt')).toString(),
   256: fs.readFileSync(path.join(__dirname, 'fixtures/256K.txt')).toString(),
   1024: fs.readFileSync(path.join(__dirname, 'fixtures/1024K.txt')).toString(),
-  2048: fs.readFileSync(path.join(__dirname, 'fixtures/2048K.txt')).toString()
+  2048: fs.readFileSync(path.join(__dirname, 'fixtures/2048K.txt')).toString()*/
 }
 
 const addTestCases = (suite, options) => {
