@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@helperdiscord/centra": "^2.0.0-rc1",
+    "@helperdiscord/centra": "^1.2.6",
     "axios": "^0.19.0",
     "benchmark": "^2.1.4",
     "got": "^9.6.0",
