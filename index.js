@@ -296,7 +296,8 @@ const runBenchmarks = ({ downloadSizes }) => {
 
 if (!module.parent) {
   const options = {
-    downloadSizes: [16, 32, 64, 256, 1024].map(s => {
+    // downloadSizes: [16, 32, 64, 256, 1024]
+    downloadSizes: [16, 32].map(s => {
       return {
         uri: `http://${process.env.NGINX}/${s}K.txt`,
         size: s
