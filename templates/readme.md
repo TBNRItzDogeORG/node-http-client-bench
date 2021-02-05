@@ -25,7 +25,7 @@ $ node index.js
 
 ## Results
 
-\${results}
+{results}
 
 ## License
 

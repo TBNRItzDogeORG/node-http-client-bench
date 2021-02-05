@@ -267,7 +267,7 @@ const onComplete = (options, results) => () => {
     .map(s => createFileSizeSection(`${s.size}K.txt`, results[s.uri]))
     .join('')
 
-  template = template.replace('${results}', resultsString)
+  template = template.replace('{results}', resultsString)
 
   fs.writeFileSync(path.join(__dirname, 'readme.md'), template)
 }
