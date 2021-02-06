@@ -62,9 +62,9 @@ const addTestCases = (suite, options) => {
   suite.add('@helperdiscord/centra', {
     defer: true,
     fn: defer => {
-      return centra(options.uri).send()
+      return centra(options.uri).text()
         .then(response => {
-          if (response.text() === fixtures[options.size]) {
+          if (response === fixtures[options.size]) {
             return defer.resolve()
           }
           throw badDataError
